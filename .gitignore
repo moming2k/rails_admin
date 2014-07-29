@@ -30,3 +30,6 @@ tmp/**/*
 .idea/*.xml
 .sass-cache
 nbproject
+
+/spec/dummy_app/.DS_Store
+/spec/.DS_Store

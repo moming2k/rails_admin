@@ -80,8 +80,15 @@ module RailsAdmin
                 end
               end
 
+              format.xls do
+                output = @objects.to_xls
+                if params[:send_data]
+                  send_data output, filename: "#{params[:model_name]}_#{DateTime.now.strftime("%Y-%m-%d_%Hh%Mm%S")}.xls"
+                else
+                  render xls: output
+                end
+              end
             end
-
           end
         end
 
